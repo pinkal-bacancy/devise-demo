@@ -1,0 +1,17 @@
+<h1>Students#new</h1>
+<p>Find me in app/views/students/new.html.erb</p>
+<%= form_for @student,url: {action: "create"}  do |f|%>
+<%= f.label :student_name%>
+<%= f.text_field :student_name%><br>
+<%= f.label :dob%>
+<%= f.date_field :dob%><br>
+<%= f.label :email%>
+<%= f.text_field :email%><br>
+<%= f.label :select_department%>
+<% depart_array = Department.all.map { |i| [i.name, i.id] } %>
+<%= f.collection_select :department_id, Department.order(:id), :id, :name%>
+
+<%= f.submit%>
+<%end%>
+<%= link_to "sign out",destroy_user_session_path,method: "delete"%>
+<%= link_to "show all students", students_show_all_path  %>

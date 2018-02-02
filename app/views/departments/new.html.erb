@@ -1,0 +1,16 @@
+<h1>Add Department</h1>
+<table border="1">
+<div class="color">
+<%= form_for @department,url: {action: "create"}  do |f|%>
+<tr>
+<td><%= f.label :name%></td>
+<td><%= f.text_field :name%><br></td>
+</tr>
+<tr>
+<td><%= f.submit%></td></tr>
+<%end%>
+
+</div>
+</table>
+<%= link_to "sign out",destroy_user_session_path,method: "delete"%><br>
+<%= link_to "show all",departments_path%>

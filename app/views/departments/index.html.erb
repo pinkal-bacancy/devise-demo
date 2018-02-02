@@ -1,0 +1,19 @@
+<h1>Departments#index</h1>
+<p>Find me in app/views/departments/index.html.erb</p>
+<table border="1">
+	<tr>Department</tr>
+<% @departments.each do |department|%>
+
+<tr>
+
+     <td> <%= department.name %></td>
+     <td><%= link_to 'add student',   new_student_path  %></td>
+     <td><%= link_to 'Destroy', department_path(department),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td><br>
+     
+ </tr>
+<%end%>
+</table>
+<%= link_to "sign out",destroy_user_session_path,method: "delete"%>
+<%= link_to "show all",departments_path%>

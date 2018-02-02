@@ -1,0 +1,22 @@
+<div class="color">
+<table border="1">
+  <tr>
+    <td>name</td>
+    <td>dob</td>
+    <td>email</td>
+
+  </tr>
+  <% @students.each do |student| %>
+  <tr>
+     		
+     <td> <%= student.student_name %></td>
+      
+      <td> <%= student.dob %></td>
+     <td> <%= student.email %></td><br>
+ </tr>
+    
+    
+  <% end %>
+   </table> 
+ </div>
+   <%= link_to "sign out",destroy_user_session_path,method: "delete"%>
